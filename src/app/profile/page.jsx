@@ -2,20 +2,41 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 const Profile = async () => {
-  const data = await fetch("https://dummyjson.com/users/1");
-  const profile = await data.json();
+  let profile;
+  try {
+    const data = await fetch("https://dummyjson.com/users/1");
+    profile = await data.json();
 
-  console.log(profile.image);
+    if (profile.message) {
+      throw Error(profile.message);
+    }
+  } catch (error) {
+    throw Error(error);
+  }
 
   return (
-    <div>
+    <div className={styles.container}>
       <Image
         src={profile.image}
+        className={styles.image}
         alt="Profile Image"
-        width={500}
-        height={500}
+        width={100}
+        height={100}
       />
-      {profile.firstName} {profile.lastName}
+      <section className={styles.section}>
+        <div className={styles.infoWrapper}>
+          <p>სახელი: </p>
+          <p>{profile.firstName}</p>
+        </div>
+        <div className={styles.infoWrapper}>
+          <p>მაიდენნეიმი: </p>
+          <p>{profile.maidenName}</p>
+        </div>
+        <div className={styles.infoWrapper}>
+          <p>გვარი: </p>
+          <p>{profile.lastName}</p>
+        </div>
+      </section>
     </div>
   );
 };
