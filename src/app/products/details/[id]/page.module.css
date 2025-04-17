@@ -1,0 +1,29 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 900px;
+    width: 100%;
+  }
+  
+  .productImage {
+    border-radius: 12px;
+    object-fit: contain;
+    background-color: #fff;
+    padding: 1rem;
+    max-width: 250px;
+  }
+  
