@@ -1,11 +1,8 @@
 import ProductItem from "@/components/ProductItem/ProductItem";
 import styles from "./page.module.css";
 import Link from "next/link";
-import { headers } from "next/headers";
 
 const Products = async () => {
-  const headersList = await headers();
-  const path = headersList.get("x-next-url");
   let products;
   try {
     const data = await fetch("https://fakestoreapi.com/products");
@@ -13,7 +10,6 @@ const Products = async () => {
   } catch (error) {
     throw Error(error);
   }
-  console.log(path);
 
   return (
     <div className={styles.container}>

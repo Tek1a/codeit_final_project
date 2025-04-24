@@ -2,8 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 const Page = async ({ params }) => {
-    const id = params.id;
-    console.log(params);
+    const { id } = await params;
     let product;
     try {
       const data = await fetch(`https://fakestoreapi.com/products/${id}`);
