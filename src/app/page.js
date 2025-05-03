@@ -65,21 +65,6 @@ export default function Home() {
           email: email,
           username: username,
           password: password,
-          name: {
-            firstname: "john",
-            lastname: "doe",
-          },
-          address: {
-            city: "kilcoole",
-            street: "new road",
-            number: 7682,
-            zipcode: "12926-3874",
-            geolocation: {
-              lat: "-37.3159",
-              long: "81.1496",
-            },
-          },
-          phone: "1-570-236-7033",
         }),
       })
         .then((res) => res.json())

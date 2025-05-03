@@ -1,5 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import AddToCart from "@/components/AddToCart/AddToCart";
+
 
 const Page = async ({ params }) => {
     const { id } = await params;
@@ -23,11 +25,14 @@ const Page = async ({ params }) => {
             className={styles.productImage}
           />
           <div className={styles.textContent}>
+            <p>{id}</p>
             <h1>{product.title}</h1>
             <p>{product.description}</p>
             <p><strong>Price:</strong> ${product.price}</p>
             <p><strong>Category:</strong> {product.category}</p>
+            <AddToCart product={product}/>
           </div>
+  
         </div>
       </div>
     );
