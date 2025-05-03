@@ -30,6 +30,15 @@ function layout({ children }) {
         >
           Profile
         </Link>
+        <Link
+           className={`
+             ${styles.link}
+             ${pathname.includes("/cart") ? styles.activeLink : styles.inActiveLink}
+             `}
+           href="/cart"
+         >
+           Cart
+         </Link>
       </nav>
       {children}
     </div>
