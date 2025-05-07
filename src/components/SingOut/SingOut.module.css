@@ -1,0 +1,21 @@
+.signOutButton {
+    background-color: #ff4d4d; 
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .signOutButton:hover {
+    background-color: #e60000; 
+    transform: scale(1.05); 
+  }
+  
+  .signOutButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.5); 
+}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import SignOut from "@/components/SingOut/SingOut";
 
 const Profile = async () => {
   let profile;
@@ -25,48 +26,47 @@ const Profile = async () => {
       />
       <section className={styles.section}>
         <div className={styles.infoWrapper}>
-          <p>სახელი: </p>
+          <p className={styles.label}>სახელი:</p>
           <p>{profile.firstName}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>მაიდენნეიმი: </p>
+          <p className={styles.label}>მაიდენნეიმი:</p>
           <p>{profile.maidenName}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>გვარი: </p>
+          <p className={styles.label}>გვარი:</p>
           <p>{profile.lastName}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>მეილი:</p>
+          <p className={styles.label}>მეილი:</p>
           <p>{profile.email}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>დაბადების თარიღი:</p>
+          <p className={styles.label}>დაბადების თარიღი:</p>
           <p>{profile.birthDate}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>სრული მისამართი:</p>
+          <p className={styles.label}>სრული მისამართი:</p>
           <p>
-            {profile.address.address}, {profile.address.state},{" "}
-            {profile.address.country}
+            {profile.address.address}, {profile.address.state}, {profile.address.country}
           </p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>უნივერსიტეტი:</p>
+          <p className={styles.label}>უნივერსიტეტი:</p>
           <p>{profile.university}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>კომპანია:</p>
+          <p className={styles.label}>კომპანია:</p>
           <p>{profile.company.name}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <p>კომპანიის მისამართი:</p>
+          <p className={styles.label}>კომპანიის მისამართი:</p>
           <p>
-            {profile.company.address.address}, {profile.company.address.state},
-            {profile.company.address.country}
+            {profile.company.address.address}, {profile.company.address.state}, {profile.company.address.country}
           </p>
         </div>
       </section>
+      <SignOut />
     </div>
   );
 };
