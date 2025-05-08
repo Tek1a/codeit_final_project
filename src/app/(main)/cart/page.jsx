@@ -49,10 +49,10 @@ function Page() {
             width={70}
             height={70}
             alt={prod.product.title}
+            className={styles.productImage}
           />
-          <div>
-            <h4> {prod.product.title}</h4>
-            <br />
+          <div className={styles.textWrapper}>
+            <h4>{prod.product.title}</h4>
             <p>{prod.count} ცალი</p>
           </div>
           <div className={styles.buttonWrapper}>
@@ -60,13 +60,13 @@ function Page() {
               className={`${styles.button} ${styles.addButton}`}
               onClick={() => handleAddOne(prod.product)}
             >
-              Add 1
+              +1
             </button>
             <button
               className={`${styles.button} ${styles.removeButton}`}
               onClick={() => handleRemoveOne(prod.product)}
             >
-              Remove 1
+              -1
             </button>
           </div>
         </div>

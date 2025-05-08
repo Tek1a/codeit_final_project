@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import AddToCart from "@/components/AddToCart/AddToCart";
+import BackButton from "@/components/BackButton/BackButton";
 
 
 const Page = async ({ params }) => {
@@ -31,6 +32,7 @@ const Page = async ({ params }) => {
             <p><strong>Price:</strong> ${product.price}</p>
             <p><strong>Category:</strong> {product.category}</p>
             <AddToCart product={product}/>
+            <BackButton />
           </div>
   
         </div>

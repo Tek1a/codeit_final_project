@@ -1,55 +1,101 @@
 .container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 140px 40px 0px;
-    gap: 20px;
-  }
-  
+  min-height: 100vh;
+  padding: 140px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #f9fafb;
+}
+
+.itemWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.itemWrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.textWrapper {
+  flex-grow: 1;
+}
+
+.itemWrapper h4 {
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin: 0;
+}
+
+.itemWrapper p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.productImage {
+  border-radius: 8px;
+  object-fit: cover;
+  background-color: #f9fafb;
+  padding: 1rem;
+  max-width: 80px;
+  min-width: 70px;
+  height: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s ease;
+}
+
+.addButton {
+  background-color: #10b981;
+  color: white;
+}
+
+.removeButton {
+  background-color: #ef4444;
+  color: white;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.button:active {
+  transform: scale(1);
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
   .itemWrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    border: 1px solid black;
-    border-radius: 8px;
-    padding: 8px 16px;
-    background-color: white;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
   .buttonWrapper {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 0;
   }
-  
-  .button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    display: inline-block;
-  }
-  
-  .addButton {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .removeButton {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  .button:hover {
-    background-color: #007bff;
-    color: white;
-    transform: scale(1.05);
-  }
-  
-  .button:active {
-    background-color: #0056b3;
-  }
+}

@@ -1,34 +1,56 @@
 .container {
   display: flex;
-  justify-content: center;
-}
-.nav {
-  width: 30vw;
-  position: fixed;
-  display: block;
-  align-self: center;
-  top: 32px;
-  display: flex;
-  justify-content: space-around;
-  border-radius: 16px;
-  gap: 1rem;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f7f7;
 }
 
-.link {
-  flex: 1;
+.nav {
+  width: fit-content;
+  max-width: 90vw;
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 16px;
-  height: 40px;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.main {
+  flex: 1;
+  margin-top: 120px;
+  padding: 2rem;
+}
+
+.link {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link:hover {
+  background-color: #eee;
 }
 
 .activeLink {
-  border: 1px solid transparent;
-  background-color: #fff;
+  background-color: #1e40af;
+  color: #fff;
 }
 
 .inActiveLink {
-  border: 1px solid black;
-  color: rgb(96, 96, 96);
+  border: 1px solid transparent;
+  color: #555;
 }

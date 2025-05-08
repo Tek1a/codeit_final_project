@@ -2,6 +2,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { usePathname } from "next/navigation";
+import Footer from "@/components/Footer/Footer";
 
 function layout({ children }) {
   const pathname = usePathname();
@@ -48,8 +49,10 @@ function layout({ children }) {
           Cart
         </Link>
       </nav>
-      {children}
+    <main className={styles.main}>{children}</main>
+    <Footer />
     </div>
+    
   );
 }
 
