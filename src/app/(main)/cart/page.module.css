@@ -9,7 +9,7 @@
 
 .itemWrapper {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.5rem;
   background-color: white;
@@ -26,6 +26,7 @@
 
 .textWrapper {
   flex-grow: 1;
+  min-width: 200px;
 }
 
 .itemWrapper h4 {
@@ -37,29 +38,29 @@
 .itemWrapper p {
   font-size: 1rem;
   color: #4b5563;
-  margin: 0;
+  margin: 0.3rem 0;
 }
 
 .productImage {
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: contain;
   background-color: #f9fafb;
   padding: 1rem;
-  max-width: 80px;
-  min-width: 70px;
-  height: auto;
+  width: 80px;
+  height: 80px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .buttonWrapper {
   display: flex;
   gap: 1rem;
+  align-items: center;
   margin-left: auto;
 }
 
 .button {
-  padding: 0.6rem 1.2rem;
-  font-size: 0.95rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   border-radius: 8px;
   border: none;
@@ -82,9 +83,16 @@
   opacity: 0.9;
 }
 
-.button:active {
-  transform: scale(1);
-  opacity: 0.8;
+.totalContainer {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+  color: #1f2937;
 }
 
 @media (max-width: 600px) {

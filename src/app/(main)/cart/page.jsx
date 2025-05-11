@@ -40,39 +40,56 @@ function Page() {
     }
   };
 
+  const calculateTotal = () => {
+    return cartProducts.reduce((acc, item) => acc + item.product.price * item.count, 0).toFixed(2);
+  };
+
   return (
     <div className={styles.container}>
-      {cartProducts?.map((prod) => (
-        <div key={prod.product.id} className={styles.itemWrapper}>
-          <Image
-            src={prod.product.image}
-            width={70}
-            height={70}
-            alt={prod.product.title}
-            className={styles.productImage}
-          />
-          <div className={styles.textWrapper}>
-            <h4>{prod.product.title}</h4>
-            <p>{prod.count} ცალი</p>
+      {cartProducts?.length > 0 ? (
+        <>
+          {cartProducts.map((prod) => (
+            <div key={prod.product.id} className={styles.itemWrapper}>
+              <Image
+                src={prod.product.image}
+                width={70}
+                height={70}
+                alt={prod.product.title}
+                className={styles.productImage}
+              />
+              <div className={styles.textWrapper}>
+                <h4>{prod.product.title}</h4>
+                <p>Quantity: {prod.count}</p> 
+                <p>Unit Price: ${prod.product.price}</p> 
+                <p>Subtotal: ${(prod.product.price * prod.count).toFixed(2)}</p> 
+              </div>
+              <div className={styles.buttonWrapper}>
+                <button
+                  className={`${styles.button} ${styles.addButton}`}
+                  onClick={() => handleAddOne(prod.product)}
+                >
+                  +1
+                </button>
+                <button
+                  className={`${styles.button} ${styles.removeButton}`}
+                  onClick={() => handleRemoveOne(prod.product)}
+                >
+                  -1
+                </button>
+              </div>
+            </div>
+          ))}
+          <div className={styles.totalWrapper}> 
+            <h3>Total: ${calculateTotal()}</h3>
           </div>
-          <div className={styles.buttonWrapper}>
-            <button
-              className={`${styles.button} ${styles.addButton}`}
-              onClick={() => handleAddOne(prod.product)}
-            >
-              +1
-            </button>
-            <button
-              className={`${styles.button} ${styles.removeButton}`}
-              onClick={() => handleRemoveOne(prod.product)}
-            >
-              -1
-            </button>
-          </div>
-        </div>
-      ))}
+        </>
+      ) : (
+        <p className={styles.emptyCart}>🛒 Your cart is empty</p> 
+      )}
     </div>
   );
 }
 
+
 export default Page;
+

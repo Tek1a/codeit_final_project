@@ -1,6 +1,11 @@
 "use client";
 import styles from "./AddToCart.module.css"
+import React from "react";
+
 function AddToCart({ product }) {
+
+
+
   const handleAddCart = async () => {
     const results = await JSON.parse(localStorage.getItem("products"));
     if (results === null) {
@@ -19,6 +24,8 @@ function AddToCart({ product }) {
 
       localStorage.setItem("products", JSON.stringify([...results]));
     }
+    
+  window.history.back();
   };
 
   return (
